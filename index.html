@@ -7,6 +7,15 @@
 
 <style>
 
+:root {
+  --primary: #1fa971;
+  --primary-light: #34d399;
+  --primary-soft: #ecfdf5;
+  --text-dark: #111827;
+  --text-muted: #6b7280;
+  --bg: #f7fafc;
+}
+
 *{
 margin:0;
 padding:0;
@@ -15,30 +24,31 @@ box-sizing:border-box;
 
 body{
 font-family: 'Segoe UI', Arial, sans-serif;
-background:#f6f9fc;
-color:#1f2937;
+background: var(--bg);
+color: var(--text-dark);
 line-height:1.6;
 }
 
 /* HEADER */
 
 header{
-background:linear-gradient(135deg,#1fa971,#17c6a3);
+background: linear-gradient(135deg, var(--primary), var(--primary-light));
 color:white;
-padding:90px 20px 70px;
+padding:100px 20px 80px;
 text-align:center;
 }
 
 header h1{
-font-size:44px;
+font-size:48px;
 font-weight:700;
-margin-bottom:10px;
+margin-bottom:12px;
+letter-spacing:0.5px;
 }
 
 header p{
 font-size:18px;
-opacity:0.9;
-max-width:600px;
+opacity:0.95;
+max-width:650px;
 margin:auto;
 }
 
@@ -47,25 +57,26 @@ margin:auto;
 .container{
 max-width:1100px;
 margin:auto;
-padding:60px 20px;
+padding:70px 20px;
 }
 
 /* SECTION */
 
 .section{
-margin-bottom:70px;
+margin-bottom:80px;
 }
 
 .section h2{
-margin-bottom:12px;
-font-size:30px;
+margin-bottom:14px;
+font-size:32px;
 font-weight:600;
-color:#1fa971;
+color: var(--primary);
 }
 
 .section p{
-color:#4b5563;
+color: var(--text-muted);
 font-size:16px;
+max-width:750px;
 }
 
 /* FEATURE GRID */
@@ -73,17 +84,17 @@ font-size:16px;
 .features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:22px;
-margin-top:30px;
+gap:24px;
+margin-top:35px;
 }
 
 .feature-card{
 background:white;
-padding:26px;
-border-radius:14px;
-box-shadow:0 10px 25px rgba(0,0,0,0.06);
-transition:0.25s ease;
+padding:28px;
+border-radius:16px;
 border:1px solid rgba(0,0,0,0.04);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+transition:all 0.25s ease;
 }
 
 .feature-card:hover{
@@ -93,67 +104,68 @@ box-shadow:0 18px 40px rgba(0,0,0,0.08);
 
 .feature-card h3{
 margin-bottom:10px;
-color:#1fa971;
+color: var(--primary);
 font-size:18px;
 }
 
 .feature-card p{
 font-size:14px;
-color:#6b7280;
+color: var(--text-muted);
 }
 
-/* STATUS BOX */
+/* STATUS */
 
 .status{
-background:linear-gradient(135deg,#ecfdf5,#f0fdf4);
-padding:28px;
-border-radius:14px;
-border-left:6px solid #1fa971;
-box-shadow:0 6px 20px rgba(0,0,0,0.05);
+background: var(--primary-soft);
+padding:30px;
+border-radius:16px;
+border-left:6px solid var(--primary);
+box-shadow:0 6px 20px rgba(0,0,0,0.04);
 }
 
 /* CTA */
 
 .cta{
-background:linear-gradient(135deg,#1fa971,#17c6a3);
+background: linear-gradient(135deg, var(--primary), var(--primary-light));
 color:white;
-padding:50px 30px;
+padding:60px 30px;
 text-align:center;
-border-radius:16px;
-box-shadow:0 10px 30px rgba(31,169,113,0.3);
+border-radius:20px;
+box-shadow:0 12px 35px rgba(31,169,113,0.3);
 }
 
 .cta h2{
-font-size:26px;
-margin-bottom:10px;
+font-size:28px;
+margin-bottom:12px;
 }
 
 .cta p{
 opacity:0.9;
-margin-bottom:20px;
+margin-bottom:22px;
 }
 
 .cta button{
 background:white;
-color:#1fa971;
+color: var(--primary);
 border:none;
-padding:12px 24px;
-border-radius:8px;
+padding:14px 28px;
+border-radius:10px;
 font-weight:600;
 cursor:pointer;
 transition:0.2s;
 }
 
 .cta button:hover{
-transform:scale(1.05);
+transform:scale(1.06);
+box-shadow:0 6px 20px rgba(0,0,0,0.1);
 }
 
 /* CONTACT */
 
 .contact{
 background:white;
-padding:24px;
-border-radius:12px;
+padding:26px;
+border-radius:14px;
 box-shadow:0 6px 20px rgba(0,0,0,0.05);
 }
 
@@ -161,10 +173,10 @@ box-shadow:0 6px 20px rgba(0,0,0,0.05);
 
 footer{
 text-align:center;
-padding:25px;
+padding:30px;
 background:#eef2f7;
 font-size:14px;
-color:#6b7280;
+color: var(--text-muted);
 }
 
 </style>
@@ -174,18 +186,25 @@ color:#6b7280;
 
 <header>
 <h1>NanoBiz</h1>
-<p>Empowering small and micro businesses to grow, connect, and succeed in their local communities 🚀</p>
+<p>
+A dedicated platform helping small and micro businesses gain visibility,
+connect with customers, and grow locally 🚀
+</p>
 </header>
 
 <div class="container">
 
+<!-- ABOUT -->
+
 <div class="section">
 <h2>About NanoBiz</h2>
 <p>
-NanoBiz is a modern platform built to support small and micro businesses that struggle to gain visibility on crowded platforms like Instagram.
-It provides a focused ecosystem where businesses can showcase their services, connect directly with customers, and grow sustainably.
+NanoBiz is designed to solve a real problem — small businesses struggling to reach customers on overcrowded platforms like Instagram.
+We provide a focused ecosystem where businesses can showcase services, connect directly with customers, and grow sustainably.
 </p>
 </div>
+
+<!-- FEATURES -->
 
 <div class="section">
 <h2>Platform Features</h2>
@@ -194,49 +213,57 @@ It provides a focused ecosystem where businesses can showcase their services, co
 
 <div class="feature-card">
 <h3>🔍 Local Discovery</h3>
-<p>Find businesses nearby with smart city-based search and filtering.</p>
+<p>Explore nearby businesses with smart location-based search.</p>
 </div>
 
 <div class="feature-card">
-<h3>💬 Direct Communication</h3>
-<p>Chat instantly with business owners for quick inquiries and bookings.</p>
+<h3>💬 Direct Chat</h3>
+<p>Communicate instantly with business owners for faster decisions.</p>
 </div>
 
 <div class="feature-card">
-<h3>📊 Insights & Analytics</h3>
-<p>Track performance, visibility, and customer engagement.</p>
+<h3>📊 Business Insights</h3>
+<p>Track visibility, engagement, and performance growth.</p>
 </div>
 
 <div class="feature-card">
 <h3>🚀 Growth Plans</h3>
-<p>Boost reach and visibility with premium subscription plans.</p>
+<p>Increase reach and attract more customers with premium plans.</p>
 </div>
 
 <div class="feature-card">
 <h3>🌍 Dedicated Marketplace</h3>
-<p>A platform built specifically for micro and local businesses.</p>
+<p>A platform focused entirely on empowering local businesses.</p>
 </div>
 
 </div>
 
 </div>
+
+<!-- STATUS -->
 
 <div class="section">
 <div class="status">
 <h2>Development Status</h2>
 <p>
-NanoBiz is currently under active development. We are continuously building features to create a powerful and user-friendly platform that helps businesses grow faster and reach more customers.
+NanoBiz is currently under active development. We are continuously building features to create a seamless and powerful experience for both customers and business owners.
 </p>
 </div>
 </div>
 
+<!-- CTA -->
+
 <div class="section">
 <div class="cta">
-<h2>Support Local Businesses</h2>
-<p>Join NanoBiz and help empower small entrepreneurs in your community.</p>
+<h2>Empowering Local Businesses</h2>
+<p>
+Join NanoBiz and be part of a growing ecosystem built for micro-entrepreneurs.
+</p>
 <button>Get Started</button>
 </div>
 </div>
+
+<!-- CONTACT -->
 
 <div class="section">
 <h2>Contact</h2>
